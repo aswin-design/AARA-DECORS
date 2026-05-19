@@ -199,8 +199,9 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     opacity: 0;
-    transform: scale(1.1); /* Start slightly zoomed for the effect */
+    transform: scale(1.1);
     animation: fadeSlider 15s infinite;
 }
 
@@ -234,6 +235,8 @@ body {
 
 .hero-content {
     color: white;
+    text-align: center;
+    width: 100%;
 }
 
 .hero-content h1 {
