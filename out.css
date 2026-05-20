@@ -1,4 +1,6 @@
-/* --- Base Styles --- */
+/* ==========================================================================
+   1. Base Styles & Global Reset
+   ========================================================================== */
 * { 
     margin: 0; 
     padding: 0; 
@@ -16,7 +18,9 @@ body {
     overflow-x: hidden; 
 }
 
-/* --- Fixed Navbar from Gallery Page --- */
+/* ==========================================================================
+   2. Fixed Luxury Navigation Bar
+   ========================================================================== */
 .navbar {
     position: fixed; 
     top: 0;
@@ -102,7 +106,9 @@ body {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-/* --- Core Page Component --- */
+/* ==========================================================================
+   3. Header & Introduction Typography
+   ========================================================================== */
 .asymmetric-portfolio-section {
     padding: 160px 0 100px;
     background: #0a0a0a;
@@ -143,7 +149,9 @@ body {
     line-height: 1.8;
 }
 
-/* --- Expanding Editorial Track Panel Engine --- */
+/* ==========================================================================
+   4. Desktop Expanding Editorial Track Panel Engine
+   ========================================================================== */
 .asymmetric-deck {
     display: flex;
     width: 92%;
@@ -155,28 +163,28 @@ body {
 
 .deck-card {
     flex: 1;
-        min-width: 0;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        cursor: pointer;
-        border: 1px solid rgba(176, 141, 87, 0.15);
-        /* Heavy elastic bezier handles beautiful snap mechanics */
-        transition: flex 0.7s cubic-bezier(0.25, 1, 0.3, 1), border-color 0.4s ease;
-    }
+    min-width: 0;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid rgba(176, 141, 87, 0.15);
+    /* Heavy elastic bezier handles beautiful snap mechanics */
+    transition: flex 0.7s cubic-bezier(0.25, 1, 0.3, 1), border-color 0.4s ease;
+}
 
-    .deck-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-        filter: brightness(0.4) grayscale(0.3);
-        transition: filter 0.6s ease, transform 0.6s ease;
-        position: absolute;
-        top: 0;
-        left: 0;
+.deck-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.4) grayscale(0.3);
+    transition: filter 0.6s ease, transform 0.6s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* Custom Dynamic Meta Labels hidden by default */
@@ -190,6 +198,7 @@ body {
     opacity: 0;
     transform: translateY(15px);
     transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s;
+    z-index: 2;
 }
 
 .deck-meta h3 {
@@ -228,7 +237,9 @@ body {
     transform: translateY(0);
 }
 
-/* --- Call to Action --- */
+/* ==========================================================================
+   5. Call to Action
+   ========================================================================== */
 .cta-section {
     background-color: #141414;
     border-top: 1px solid rgba(176, 141, 87, 0.2);
@@ -251,36 +262,25 @@ body {
 
 .cta-btn {
     display: inline-block;
-    background-color: #25d366;
-    color: #fff;
-    padding: 12px 30px;
+    background: #25d366;
+    color: #f5f9f5;
+    padding: 15px 35px;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.95rem;
     text-decoration: none;
-    transition: 0.3s ease;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media (max-width: 768px) {
-    .cta-btn { padding: 12px 25px; font-size: 0.9rem; }
-}
-
-@media (max-width: 576px) {
-    .cta-btn { padding: 10px 20px; font-size: 0.85rem; width: 100%; max-width: 300px; }
+    font-weight: 600;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .cta-btn:hover {
     background-color: #128c7e;
 }
 
-/* --- Footer Layout --- */
+/* ==========================================================================
+   6. Footer Layout
+   ========================================================================== */
 .site-footer {
     background-color: #000000; 
-    color: #585858; /* Fixed: Changed from #ffffff to prevent invisible text */
+    color: #585858; 
     padding: 80px 10% 30px;
     border-top: 3px solid #b08d57;
 }
@@ -329,7 +329,7 @@ body {
 }
 .email-list {
     list-style: none;
-    padding-left: 24px; /* Aligns cleanly beneath the "E-mail:" label text */
+    padding-left: 24px; 
     margin: 0;
 }
 .email-list li {
@@ -374,13 +374,15 @@ body {
 .footer-bar {
     margin-top: 50px; 
     padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center; 
     font-size: 0.85rem; 
     color: #666;
 }
 
-/* --- Responsive Media Adjustments --- */
+/* ==========================================================================
+   7. Responsive Media Adjustments
+   ========================================================================== */
 @media (max-width: 992px) {
     .navbar { padding: 12px 18px; background: rgba(0,0,0,0.98); box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
     .navbar.scrolled { padding: 12px 18px; }
@@ -397,8 +399,9 @@ body {
     .portfolio-intro { padding: 0 12px; }
     .section-title h2 { font-size: 2.4rem; }
     .intro-text { font-size: 0.98rem; }
+    
     .asymmetric-deck { height: auto; gap: 18px; flex-wrap: wrap; }
-    .deck-card { min-height: 320px; flex: 0 1 calc(50% - 9px); }
+    .deck-card { min-height: 320px; flex: 0 1 calc(50% - 9px); position: relative; }
     .deck-card.active { flex: 0 1 100%; }
     .deck-meta { padding: 24px; }
     .footer-wrapper { flex-direction: column; gap: 30px; }
@@ -409,12 +412,45 @@ body {
     .logo img { height: 60px; }
     .section-title h2 { font-size: 2rem; }
     .intro-text { font-size: 0.95rem; }
-    .asymmetric-deck { flex-direction: column; width: 100%; gap: 15px; }
-    .deck-card { width: 100%; max-width: 100%; min-height: 280px; flex: 0 1 auto !important; object-fit: cover; }
-    .deck-card.active { flex: 0 1 auto !important; }
-    .deck-card img { width: 100%; height: 100%; object-fit: cover; position: static; }
-    .deck-meta { position: relative; opacity: 1; transform: translateY(0); background: rgba(10,10,10,0.92); }
-    .cta-btn { width: 100%; max-width: 320px; }
+    
+    .asymmetric-deck { 
+        flex-direction: column; 
+        width: 100%; 
+        height: auto;
+        gap: 15px; 
+    }
+    
+    .deck-card { 
+        width: 100%; 
+        max-width: 100%; 
+        min-height: 320px; 
+        flex: none !important; 
+        position: relative; /* Targets absolute coordinates inside the box */
+    }
+    
+    .deck-card.active { 
+        flex: none !important; 
+    }
+    
+    /* FIX: Absolute layer tracking forces the image to perfectly cover box boundaries */
+    .deck-card img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        position: absolute; 
+        top: 0;
+        left: 0;
+    }
+    
+    .deck-meta { 
+        position: absolute; 
+        opacity: 1; 
+        transform: translateY(0); 
+        background: linear-gradient(transparent, rgba(10,10,10,0.95)); 
+    }
+    
+    .cta-btn { padding: 12px 25px; font-size: 0.9rem; width: 100%; max-width: 320px; }
+    .footer-wrapper { flex-direction: column; gap: 35px; }
 }
 
 @media (max-width: 576px) {
@@ -422,7 +458,8 @@ body {
     .nav-links li { padding: 6px 8px; font-size: 14px; }
     .section-title h2 { font-size: 1.7rem; }
     .portfolio-intro { padding: 0 10px; }
-    .deck-card { min-height: 240px; }
+    .deck-card { min-height: 250px; }
     .deck-meta { padding: 18px; }
     .footer-wrapper { padding: 0 12px 30px; }
+    .cta-btn { padding: 10px 20px; font-size: 0.85rem; width: 100%; max-width: 300px; }
 }
