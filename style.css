@@ -65,6 +65,8 @@ body {
     color: #f3ce7e;
 }
 
+
+/* Desktop Hover Triggers */
 /* --- Dropdown System --- */
 .dropdown {
     position: relative;
@@ -114,8 +116,6 @@ body {
     color: #b08d57;
     padding-left: 30px;
 }
-
-/* Desktop Hover Triggers */
 @media (min-width: 769px) {
     .dropdown:hover .dropdown-content {
         display: block;
