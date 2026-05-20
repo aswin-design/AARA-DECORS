@@ -12,7 +12,7 @@ html {
 }
 
 body { 
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif !important;
     background: #0a0a0a; 
     color: #ffffff;
     overflow-x: hidden; 
