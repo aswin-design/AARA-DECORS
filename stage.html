@@ -19,6 +19,13 @@
             <img src="ChatGPT Image May 15, 2026, 10_19_08 AM.png" alt="AARA Logo">
         </div>
         
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about us">About Us</a></li>
@@ -148,6 +155,35 @@
 </footer>
 
     <script>
+        window.onscroll = function() {
+            const nav = document.querySelector('.navbar');
+            if (window.pageYOffset > 50) {
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (navLinks && navToggle) {
+                navLinks.addEventListener('click', function (event) {
+                    const targetLink = event.target.closest('a');
+                    if (targetLink) {
+                        navToggle.checked = false;
+                    }
+                });
+            }
+        });
+
+        function activateCard(card) {
+            const allCards = card.parentElement.querySelectorAll('.deck-card');
+            allCards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+        }
+    </script>
         // Scroll Effect for Navbar
         window.onscroll = function() {
             const nav = document.getElementById('main-nav');

@@ -19,6 +19,13 @@
             <img src="ChatGPT Image May 15, 2026, 10_19_08 AM.png" alt="AARA Logo">
         </div>
         
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#outdoor-section">Outdoor</a></li>
@@ -208,6 +215,20 @@
                 nav.classList.remove("scrolled");
             }
         };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (navLinks && navToggle) {
+                navLinks.addEventListener('click', function (event) {
+                    const targetLink = event.target.closest('a');
+                    if (targetLink) {
+                        navToggle.checked = false;
+                    }
+                });
+            }
+        });
 
         // Smooth Layout Transition Multi-Card Logic scoped cleanly to parent decks
         function activateCard(clickedCard) {
