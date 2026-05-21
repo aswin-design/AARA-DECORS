@@ -522,3 +522,34 @@ body {
     .footer-wrapper { padding: 0 12px 30px; }
     .cta-btn { padding: 10px 20px; font-size: 0.85rem; width: 100%; max-width: 300px; }
 }
+
+/* --- Mobile: make dropdown behave like home page (full-width list) --- */
+/* --- Mobile: make dropdown behave like home page (centered panel) --- */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        width: 100%;
+        max-width: 360px;
+        margin: 8px auto 0;
+        padding: 0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+    .dropdown-content li a {
+        color: white;
+        padding: 12px 18px;
+        display: block;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .dropdown-content li a:hover {
+        background: rgba(255,255,255,0.03);
+        color: #f3ce7e;
+        padding-left: 18px;
+    }
+}
